@@ -737,7 +737,7 @@ type family KeepType (keep :: Bool) (optionalType :: Type) = t | t -> keep optio
 deriving instance (C.ShowX t) => (C.ShowX (Identity t))
 deriving instance (C.NFDataX t) => (C.NFDataX (Identity t))
 #endif
-#if !MIN_VERSION_clash_prelude(1, 8, 2)
+#if !MIN_VERSION_clash_prelude(1, 8, 1)
 deriving instance (C.ShowX t) => (C.ShowX (Proxy t))
 deriving instance C.NFDataX (Proxy t)
 #endif
