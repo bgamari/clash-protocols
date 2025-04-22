@@ -129,7 +129,7 @@ fanin = fromSignals $ \(upFwds, (reqAck, respData)) ->
   fanin' = circuit $ \(reqs, resp) -> do
     [fwd0, fwd1]
         <- Df.fanout
-        <| Df.roundrobinCollect @n Df.Parallel
+        <| Df.roundrobinCollect @n Df.Skip
         <| repeatWithIndexC (\i -> Df.map (\x -> (i,x)))
         -< reqs
 
